@@ -56,7 +56,7 @@
 	  			<groupId>org.springframework.boot</groupId>
 	  			<artifactId>spring-boot-maven-plugin</artifactId>
 	  			<configuration>
-	  				<mianClass>com.bfxy.springcloud.HysConsumer2Application</mianClass>
+	  				<mainClass>com.bfxy.springcloud.HysConsumer2Application</mainClass>
 	  			</configuration>
 	  		</plugin>
 	  	</plugins>

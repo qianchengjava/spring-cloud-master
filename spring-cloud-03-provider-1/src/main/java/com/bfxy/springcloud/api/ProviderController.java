@@ -15,12 +15,12 @@ import com.bfxy.springcloud.entity.User;
 @RestController
 public class ProviderController {
 
-	
+	int num = 0;
 	@RequestMapping(value="/hello")
 	public String hello() throws InterruptedException {
 		System.err.println("--------provider1 : say hello!----------");
 		Thread.sleep(5000);
-		return "--------provider1 : say hello!----------";
+		return "--------provider1 : say hello!----------" + num++;
 	}
 	
 	@RequestMapping(value="/hi")

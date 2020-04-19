@@ -18,12 +18,24 @@ public class ConsumerController {
 	
 	@RequestMapping(value="/hystrix-hello")
 	public String hello() throws Exception {
-		return helloService.callhello();
+		String res = "init";
+		try {
+			res = helloService.callhello();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
 	}
 	
 	@RequestMapping(value="/hystrix-hi")
 	public String hi() throws Exception {
-		return helloService.callhi();
+		String res = "init hi";
+		try {
+			res = helloService.callhi();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
 	}
 	
 	@RequestMapping(value="/hystrix-hello-timeout")

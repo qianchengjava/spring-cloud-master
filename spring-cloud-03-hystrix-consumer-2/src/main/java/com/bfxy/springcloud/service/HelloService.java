@@ -7,6 +7,9 @@ import java.util.concurrent.Semaphore;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.bfxy.springcloud.entity.User;
@@ -24,14 +27,23 @@ public class HelloService {
 	 * 服务超时调用异常（服务的调用方）
 	 * @return
 	 */
-	@HystrixCommand(fallbackMethod = "callhelloFailback")
+	@HystrixCommand(fallbackMethod = "callhelloFailback",
+			commandProperties = {
+					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "3000")
+			})
 	public String callhello(){
-		String ret= restTemplate.getForObject("http://provider-service/hello", String.class);
+		String ret= "aaa";
+		try {
+			ret = restTemplate.getForObject("http://provider-service/hello", String.class);
+		} catch (RestClientException e) {
+			e.printStackTrace();
+		}
 		System.err.println("hello service ret: " + ret);
 		return ret;
 	}
 	
 	public String callhelloFailback(){
+		System.out.println("熔断callhelloFailback");
 		return "hello服务调用失败,进降级处理!!";
 	}
 

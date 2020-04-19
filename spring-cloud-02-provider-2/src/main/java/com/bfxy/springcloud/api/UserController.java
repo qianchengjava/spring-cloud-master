@@ -13,7 +13,7 @@ public class UserController {
     @RequestMapping(value = "/getUser", method = {RequestMethod.GET})
     public User getUser(@RequestParam("id") String id) throws InterruptedException {
         System.err.println("provider-2 ----> id: " + id);
-        Long sleepMills = 1000L;
+        Long sleepMills = 1500L;
         Thread.sleep(sleepMills);
         return new User(id, "张三provider2 sleepMills:" + sleepMills);
     }

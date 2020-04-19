@@ -16,7 +16,7 @@ eureka:
       defaultZone: http://eureka1:8001/eureka
   
 ##在E版本以后 对于Ribbon的重试 就不需要设置断路器超时时间了
-##hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 500
 
 custom: 
   requestFactory:
@@ -29,7 +29,7 @@ provider-service:
   ribbon: 
     OkToRetryOnAllOperations: true ##对所有的请求都进行重试
     MaxAutoRetriesNextServer: 1 ##切换实例的次数
-    MaxAutoRetries: 1    ##对当前实例重试的次数
+    MaxAutoRetries: 3    ##对当前实例重试的次数
 
 
 

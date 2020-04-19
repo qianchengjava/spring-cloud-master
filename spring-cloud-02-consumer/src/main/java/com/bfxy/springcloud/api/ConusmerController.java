@@ -16,26 +16,26 @@ import com.bfxy.springcloud.entity.User;
 @RestController
 public class ConusmerController {
 
-	@Autowired
-	private RestTemplate restTemplate;
-	
-	
-	@RequestMapping(value="/get")
-	public String get(){
-		ResponseEntity<User> responseEntity = restTemplate.getForEntity("http://provider-service/getUser?id=001", User.class);
-		User user = responseEntity.getBody();
-		System.err.println("username: " + user.getName());
-		return "get success!";
-	}
-	
-	
-	@RequestMapping(value="/post")
-	public String post(){
-		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-		params.set("id", "002");
-		ResponseEntity<User> responseEntity = restTemplate.postForEntity("http://provider-service/postUser", params, User.class);
-		User user = responseEntity.getBody();
-		System.err.println("username: " + user.getName());
-		return "post success!";
-	}
+    @Autowired
+    private RestTemplate restTemplate;
+
+
+    @RequestMapping(value = "/get")
+    public String get() {
+        ResponseEntity<User> responseEntity = restTemplate.getForEntity("http://provider-service/getUser?id=001", User.class);
+        User user = responseEntity.getBody();
+        System.err.println("username: " + user.getName());
+        return "get success!";
+    }
+
+
+    @RequestMapping(value = "/post")
+    public String post() {
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.set("id", "002");
+        ResponseEntity<User> responseEntity = restTemplate.postForEntity("http://provider-service/postUser", params, User.class);
+        User user = responseEntity.getBody();
+        System.err.println("username: " + user.getName());
+        return "post success!" + user.getName();
+    }
 }

@@ -20,8 +20,8 @@ public class UserController {
 	@RequestMapping(value="/postUser", method = {RequestMethod.POST})
 	public User postUser(@RequestParam("id")String id) throws InterruptedException {
 		System.err.println("provider-2 ----> id: " + id);
-		Thread.sleep(1000);
-		return new User(id, "李四");
+//		Thread.sleep(1000);
+		return new User(id, "could02-provider-2");
 	}
 	
 }

@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient	//标识具体的一个服务,需要向注册中心注册
 @SpringBootApplication	//SpringBoot 核心配置
 @EnableRetry			//开启重试
-public class Application {
+public class ApplicationDay2Retry {
 
 	
 	/**
@@ -46,7 +46,7 @@ public class Application {
 	
 	public static void main(String[] args) {
 		
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ApplicationDay2Retry.class, args);
 	}
 	
 }

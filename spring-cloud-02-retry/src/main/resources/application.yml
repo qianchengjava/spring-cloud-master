@@ -29,7 +29,7 @@ provider-service:
   ribbon: 
     OkToRetryOnAllOperations: true ##对所有的请求都进行重试
     MaxAutoRetriesNextServer: 1 ##切换实例的次数
-    MaxAutoRetries: 2    ##对当前实例重试的次数
+    MaxAutoRetries: 1    ##对当前实例重试的次数
 
 
 

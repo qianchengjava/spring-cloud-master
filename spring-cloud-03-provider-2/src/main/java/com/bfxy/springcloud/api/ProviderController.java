@@ -19,7 +19,6 @@ public class ProviderController {
 	@RequestMapping(value="/hello")
 	public String hello() throws InterruptedException {
 		System.err.println("--------provider2 : say hello!----------");
-		Thread.sleep(5000);
 		return "--------provider2 : say hello!----------";
 	}
 	

@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class IndexController {
+    private int a = 0;
 
-	@RequestMapping(value="/index", method = {RequestMethod.GET})
-	public String hello() {
-		return "Hello World!";
-	}
-	
-	
+    @RequestMapping(value = "/index", method = {RequestMethod.GET})
+    public String hello() {
+        System.out.println("调到了provider的index方法" + (a++));
+        return "Hello World:" + a;
+    }
+
+
 }

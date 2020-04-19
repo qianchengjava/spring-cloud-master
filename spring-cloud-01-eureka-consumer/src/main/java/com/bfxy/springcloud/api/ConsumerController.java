@@ -30,7 +30,7 @@ public class ConsumerController {
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://provider-service/index", String.class);
 		String ret = responseEntity.getBody();
 		System.err.println("返回provider服务调用结果: " + ret);
-		return "----------get by service name----------";
+		return "----------get by service name----------"+ret;
 	}
 	
 }

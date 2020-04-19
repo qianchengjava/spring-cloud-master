@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient	//标识具体的一个服务,需要向注册中心注册
 @SpringBootApplication	//SpringBoot 核心配置
 @EnableAutoConfiguration
-public class Application {
+public class ApplicationDay1Consumer {
 
 	@Bean
 	@LoadBalanced  // 如果加了这个注解 , 那么就说明 具有了服务发现的特性 负载均和的机制
@@ -21,7 +21,7 @@ public class Application {
 	
 	public static void main(String[] args) {
 		
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ApplicationDay1Consumer.class, args);
 	}
 	
 }

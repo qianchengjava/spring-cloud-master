@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
-
+@EnableCircuitBreaker	//1.开启断路器的功能
 @EnableDiscoveryClient	//标识具体的一个服务,需要向注册中心注册
 @SpringBootApplication	//SpringBoot 核心配置
-public class Application {
+public class HysCon1Application {
 
 	
 	@Bean
@@ -31,7 +31,7 @@ public class Application {
 	
 	public static void main(String[] args) {
 		
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(HysCon1Application.class, args);
 	}
 	
 }

@@ -1,6 +1,5 @@
 package com.bfxy.springcloud.api;
 
-import static org.junit.Assert.assertSame;
 
 import java.util.ArrayList;
 import java.util.List;

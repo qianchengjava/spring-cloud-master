@@ -49,7 +49,7 @@
 	  			<groupId>org.springframework.boot</groupId>
 	  			<artifactId>spring-boot-maven-plugin</artifactId>
 	  			<configuration>
-	  				<mianClass>com.bfxy.springcloud.Application</mianClass>
+	  				<mainClass>com.bfxy.springcloud.Application</mainClass>
 	  			</configuration>
 	  		</plugin>
 	  	</plugins>

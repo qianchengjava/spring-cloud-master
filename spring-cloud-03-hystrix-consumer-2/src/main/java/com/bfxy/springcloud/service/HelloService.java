@@ -142,7 +142,7 @@ public class HelloService {
     /**
      * Hystrix实现限流机制： 使用SEMAPHORE方式: 使用java.util.concurrent.SEMAPHORE
      */
-    @HystrixCommand(commandKey = "semaphoreKye1",
+    @HystrixCommand(commandKey = "semaphoreKey1-qianchengtest",
             commandProperties = {@HystrixProperty(name = "execution.isolation.strategy", value = "SEMAPHORE"),
                     @HystrixProperty(name = "execution.isolation.semaphore.maxConcurrentRequests", value = "10")})
     public String semaphore() {

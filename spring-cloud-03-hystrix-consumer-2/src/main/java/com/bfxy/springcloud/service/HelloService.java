@@ -90,9 +90,9 @@ public class HelloService {
 	 */
 	@HystrixCollapser(batchMethod="findAll", 
 		collapserProperties = {
-				@HystrixProperty(name="timerDelayInMilliseconds", value="200"),	//单个请求的延迟时间
-				@HystrixProperty(name="maxRequestsInBatch", value="50"),		//允许最大的合并请求数量
-				@HystrixProperty(name="requestCache.enabled", value="false")	//是否允许开启请求的本地缓存（对于一些静态数据可以进行启用）
+				@HystrixProperty(name="timerDelayInMilliseconds", value="10000"),	//单个请求的延迟时间
+				@HystrixProperty(name="maxRequestsInBatch", value="3"),		//允许最大的合并请求数量
+				@HystrixProperty(name="requestCache.enabled", value="true")	//是否允许开启请求的本地缓存（对于一些静态数据可以进行启用）
 		}
 	)
 	public Future<User> find(String id){
@@ -102,7 +102,7 @@ public class HelloService {
 	@HystrixCommand
 	public List<User> findAll(List<String> ids) {
 		System.err.println("合并请求线程操作: --------> " + Thread.currentThread().getName());
-		List<User> users = restTemplate.getForObject("http://provider-service/users?ids={1}", List.class, StringUtils.join(ids, ","));
+		List<User> users = restTemplate.getForObject("http://provider-service/my-users?ids={1}", List.class, StringUtils.join(ids, ","));
 		return users;
 	}
 	

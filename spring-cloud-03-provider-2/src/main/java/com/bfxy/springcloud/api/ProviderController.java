@@ -41,7 +41,9 @@ public class ProviderController {
     // http://localhost:7001/users/1
     @RequestMapping(value = "/users/{id}")
     public User getUser(@PathVariable String id) throws Exception {
-        System.err.println("provider-2 单独查询-------> " + id);
+        System.err.println("start provider-2 单独查询-------> " + id + "|" + Thread.currentThread().getName());
+        Thread.sleep(1000);
+        System.err.println("end provider-2 单独查询-------> " + id + "|" + Thread.currentThread().getName());
         return new User("1", "张三");
     }
 
@@ -52,14 +54,15 @@ public class ProviderController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/users")
+    @RequestMapping(value = "/my-users")
     public List<User> getUsers(@RequestParam("ids") String ids) throws Exception {
-        System.err.println("provider-2 批量查询-------> " + ids);
+        System.err.println("start provider-2 批量查询-------> " + ids + "|" + Thread.currentThread().getName());
+        Thread.sleep(1000);
         List<User> users = new ArrayList<>();
-        users.add(new User("2", "张四"));
-        users.add(new User("3", "张五"));
-        users.add(new User("4", "张六"));
-        users.add(new User("5", "张七"));
+        for (String id : ids.split(",")) {
+            users.add(new User(id, "张老" + id));
+        }
+        System.err.println("end provider-2 批量查询-------> " + ids + "|" + Thread.currentThread().getName());
         return users;
     }
 

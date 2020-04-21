@@ -20,7 +20,7 @@ public class IndexController {
     public String hi() throws InterruptedException {
         num++;
         System.out.println("start provider-1 " + num);
-        Thread.sleep(2000);
+        Thread.sleep(900);
         System.out.println("end provider-1 " + num);
         num = 0;
         return "Hi Feign!";

@@ -25,10 +25,7 @@ feign:
         - text/html, application/xml, application/json    
 
 ##设置断路器的超时时间
-hystrix:
-  command:
-    default:
-      execution:
+hystrix.command.default.execution:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
@@ -36,7 +33,7 @@ hystrix:
 ##微服务的请求配置
 provider-service: 
   ConnectTimeout: 10000
-  ReadTimeout: 30000
+  ReadTimeout: 3000
   ribbon: 
     OkToRetryOnAllOperations: false ##对所有的请求都进行重试
     MaxAutoRetriesNextServer: 1 ##切换实例的次数

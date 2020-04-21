@@ -28,7 +28,7 @@ eureka:
 zuul:
   routes:
     api-order:
-      path: /order-service/**
+      path: /order-service123/**
       service-id: order-service  
     api-user:
       path: /user-service/**

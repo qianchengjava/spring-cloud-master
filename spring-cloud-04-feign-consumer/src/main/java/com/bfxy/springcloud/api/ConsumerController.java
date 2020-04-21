@@ -9,16 +9,16 @@ import com.bfxy.springcloud.feign.IndexFeignClient;
 @RestController
 public class ConsumerController {
 
-	@Autowired
-	private IndexFeignClient indexFeignClient;
-	
-	@RequestMapping(value="/feign-hello")
-	public String hello() throws Exception {
-		return indexFeignClient.hello();
-	}
-	
-	@RequestMapping(value="/feign-hi")
-	public String hi() throws InterruptedException {
-		return indexFeignClient.hi();
-	}
+    @Autowired
+    private IndexFeignClient indexFeignClient;
+
+    @RequestMapping(value = "/feign-hello")
+    public String hello() throws Exception {
+        return indexFeignClient.hello();
+    }
+
+    @RequestMapping(value = "/feign-hi")
+    public String hi() throws InterruptedException {
+        return indexFeignClient.hi();
+    }
 }

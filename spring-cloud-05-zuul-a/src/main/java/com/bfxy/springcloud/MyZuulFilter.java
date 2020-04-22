@@ -48,12 +48,9 @@ public class MyZuulFilter extends ZuulFilter {
 		HttpServletRequest request = ctx.getRequest();
 		System.err.println("--------------uri: -------------- " + request.getRequestURI());
 		
-		/**
-		RequestContext ctx = RequestContext.getCurrentContext();
-		HttpServletRequest request = ctx.getRequest();
 		String token = request.getHeader("x-token");
-		
-		
+
+
 		if(!StringUtils.isBlank(token) && "1234".equals(token)){
 			ctx.addZuulRequestHeader("token", token);
 			//当前用户的角色信息. 用户等级. ...
@@ -64,9 +61,8 @@ public class MyZuulFilter extends ZuulFilter {
 			ctx.setResponseStatusCode(401);
 			ctx.setResponseBody("------access token error!-----------");
 			return null;		//阻止向下游执行
-		} 
-		*/
-		
+		}
+
 		return ctx;
 	}
 	

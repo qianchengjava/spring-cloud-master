@@ -30,8 +30,8 @@ public class UserController {
 	public String upload(@RequestParam("file") MultipartFile file){
 		try {
 			System.err.println("文件名称: " + file.getOriginalFilename() + ", 文件大小:" + file.getSize());
-			FileUtils.writeByteArrayToFile(new File("d:/" + file.getOriginalFilename()), file.getBytes());
-		} catch (IOException e) {
+			//FileUtils.writeByteArrayToFile(new File("d:/" + file.getOriginalFilename()), file.getBytes());
+		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
 		}

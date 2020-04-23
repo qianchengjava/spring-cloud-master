@@ -28,7 +28,7 @@ eureka:
 zuul:
   routes:
     api-order:
-      path: /order-service/**
+      path: /order-service123/**
       service-id: order-service  
     api-user:
       path: /user-service/**
@@ -37,7 +37,7 @@ zuul:
 
 
 ##设置断路器的超时时间
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 50000    
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 20000
 
 ##全局请求的负载均衡和重试配置
 

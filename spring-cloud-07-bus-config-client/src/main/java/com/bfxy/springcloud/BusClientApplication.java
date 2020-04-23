@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication	//SpringBoot 核心配置
-public class Application {
+public class BusClientApplication {
 
 	public static void main(String[] args) {
 		
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(BusClientApplication.class, args);
 	}
 	
 }

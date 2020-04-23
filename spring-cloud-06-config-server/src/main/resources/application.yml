@@ -5,8 +5,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/baihezhuo/learngit  ##git地址
-          
+          uri: https://github.com/baihezhuo/learngit
+#https://github.com/qianchengjava/spring-cloud-master
+#https://github.com/baihezhuo/learngit
+
 server:
   context-path: /
   port: 4000

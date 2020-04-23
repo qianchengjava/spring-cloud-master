@@ -1,7 +1,7 @@
 ##http://localhost:4000/{application}/{profile}/{label}
 spring:
   application:
-    name: evn
+    name: qcConfig
   cloud:
     config:
       uri: http://localhost:4000/

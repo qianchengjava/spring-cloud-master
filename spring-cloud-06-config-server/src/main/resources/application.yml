@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/baihezhuo/learngit
+          uri: https://github.com/qianchengjava/spring-cloud-master
 #https://github.com/qianchengjava/spring-cloud-master
 #https://github.com/baihezhuo/learngit
 

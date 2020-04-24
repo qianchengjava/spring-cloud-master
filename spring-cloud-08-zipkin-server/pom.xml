@@ -60,7 +60,7 @@
 	  			<groupId>org.springframework.boot</groupId>
 	  			<artifactId>spring-boot-maven-plugin</artifactId>
 	  			<configuration>
-	  				<mainClass>com.bfxy.springcloud.Application</mainClass>
+	  				<mainClass>com.bfxy.springcloud.ZipkinServerApplication</mainClass>
 	  			</configuration>
 	  		</plugin>
 	  	</plugins>
